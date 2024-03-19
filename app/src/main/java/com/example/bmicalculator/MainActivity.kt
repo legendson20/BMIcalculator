@@ -183,6 +183,13 @@ fun BMICalculator() {
                 fontWeight = FontWeight.Bold
             )
 
+            Text(
+                text = "손연우~~",
+                fontSize = 10.sp,
+                color = Blue,
+                fontWeight = FontWeight.Bold
+            )
+
 
         }
     }
