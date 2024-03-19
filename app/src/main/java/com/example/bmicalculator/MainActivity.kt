@@ -19,6 +19,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -121,11 +122,11 @@ fun BMICalculator() {
                 onValueChange = { inputHeight = it },
                 label = { Text(text = ("키를 입력하세요.(cm)")) },
                 colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor =Color.Blue,
+                    focusedBorderColor = Color.Blue,
                     unfocusedContainerColor = White,
                     focusedContainerColor = White
                 )
-                )
+            )
 
             Spacer(modifier = Modifier.height(10.dp))
             OutlinedTextField(
@@ -133,30 +134,32 @@ fun BMICalculator() {
                 onValueChange = { inputWeight = it },
                 label = { Text(text = ("몸무게를 입력하세요.(kg)")) },
                 colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor =Color.Blue,
+                    focusedBorderColor = Color.Blue,
                     unfocusedContainerColor = White,
                     focusedContainerColor = White
                 )
             )
             Spacer(modifier = Modifier.height(10.dp))
 
-            OutlinedTextField(
+            TextField(
                 value = yourBMI,
                 onValueChange = { yourBMI = it },
                 label = { Text(text = ("당신의 BMI지수는?")) },
                 colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor =Color.Blue,
+                    focusedBorderColor = Color.Blue,
                     unfocusedContainerColor = White,
                     focusedContainerColor = White
-                ))
+                )
+            )
+            Spacer(modifier = Modifier.height(10.dp))
 
-            OutlinedTextField(
+            TextField(
 
                 value = Result,
                 onValueChange = { Result = it },
                 label = { Text(text = ("결과")) },
                 colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor =Color.Blue,
+                    focusedBorderColor = Color.Blue,
                     unfocusedContainerColor = when (Result) {
                         "저체중" -> Color.Cyan
                         "정상" -> Color.Green
@@ -172,25 +175,17 @@ fun BMICalculator() {
                         else -> White
                     }
 
-                    )
+                )
             )
+
+
             Spacer(modifier = Modifier.height(10.dp))
 
             Text(
-                text = "Made by MJSON",
+                text = "Made by MJSON, 19MAR24",
                 fontSize = 10.sp,
                 color = Blue,
-                fontWeight = FontWeight.Bold
-            )
-
-            Text(
-                text = "손연우~~",
-                fontSize = 10.sp,
-                color = Blue,
-                fontWeight = FontWeight.Bold
-            )
-
-
+                fontWeight = FontWeight.Bold)
         }
     }
 
